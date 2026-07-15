@@ -1,0 +1,66 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+backend/.venv/
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# ==========================
+# Node.js / React
+# ==========================
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================
+# IDEs
+# ==========================
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Database
+# ==========================
+*.sqlite3
+*.db
+
+# ==========================
+# Misc
+# ==========================
+*.log
