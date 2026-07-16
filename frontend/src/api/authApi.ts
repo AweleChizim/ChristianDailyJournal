@@ -3,7 +3,7 @@ import api from "./axios";
 import type {
   LoginResponse,
   SignupResponse,
-} from "../types/auth.types";
+} from "../types/auth";
 
 import type {
   SignupFormData,
@@ -11,7 +11,7 @@ import type {
 
 import type {
   LoginFormData,
-} from "../features/auth/schemas/login.Schema";
+} from "../features/auth/schemas/login.schema";
 
 export async function signup(
   data: SignupFormData

@@ -1,0 +1,15 @@
+.journal-page{
+    padding:60px;
+    min-height:100%;
+    background:#D8CFBC;
+}
+
+.journal-page .entry-card{
+    min-height:220px;
+}
+
+@media(max-width:768px){
+    .journal-page{
+        padding:80px 20px 30px;
+    }
+}

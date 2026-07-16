@@ -1,0 +1,59 @@
+.entry-card{
+    background:#FCFAF8;
+    border-radius:28px;
+    border:1px solid #EFE7DE;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.entry-card p{
+    font-family:"Lora";
+    color:#11120D;
+    line-height:1.7;
+    white-space:pre-wrap;
+}
+
+.entry-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:12px;
+}
+
+.entry-actions button{
+    width:30px;
+    height:30px;
+    border:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    color:#11120D;
+    background: transparent;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.entry-actions button:hover {
+    background-color: #d8cfbcee ;
+}
+
+.entry-actions .delete {
+    color: #A53F3F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entry-actions .delete:hover {
+    background-color: #FDECEC;
+}
+
+.entry-card.compact{
+    min-height:140px;
+}
+
+.entry-card:not(.compact){
+    min-height:220px;
+}

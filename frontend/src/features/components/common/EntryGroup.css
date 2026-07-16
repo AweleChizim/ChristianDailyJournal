@@ -1,0 +1,11 @@
+.entry-group{
+    margin-bottom:36px;
+}
+
+.entry-group h2{
+    font-family:"Lora";
+    font-style: italic;
+    font-size:1.4rem;
+    color:#11120D;
+    margin-bottom:15px;
+}

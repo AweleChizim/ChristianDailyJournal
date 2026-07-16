@@ -12,8 +12,8 @@ import GoogleButton from "../../../components/ui/GoogleButton";
 import {
   loginSchema,
   type LoginFormData,
-} from "../schemas/login.Schema";
-import { login } from "../../../api/auth";
+} from "../schemas/login.schema";
+import { login } from "../../../api/authApi";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";

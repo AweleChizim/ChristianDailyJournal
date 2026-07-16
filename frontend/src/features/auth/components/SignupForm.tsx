@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import { signup } from "../../../api/auth";
+import { signup } from "../../../api/authApi";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";

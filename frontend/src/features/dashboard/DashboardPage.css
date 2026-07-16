@@ -1,0 +1,71 @@
+.dashboard{
+    padding:60px;
+    background:#D8CFBC;
+}
+
+.dashboard-row{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+    align-items:start;
+    margin-top:40px;
+}
+
+.journal-section{
+    margin-top:32px;
+}
+
+.dashboard-textarea{
+    width:100%;
+    flex:1;
+    resize:none;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:"Lora";
+    font-size:1.10rem;
+    color:#11120D;
+    line-height:1.8;
+    min-height:55px;
+}
+
+.dashboard-textarea::placeholder{
+    color:#11120D 90%;
+    font-style: italic;
+}
+
+.journal{
+    min-height:180px;
+}
+
+.save-button{
+    align-self:flex-end;
+    margin-top:24px;
+    width:150px;
+    height:50px;
+    border:none;
+    border-radius:999px;
+    background:#565449;
+    color:white;
+    font-family:"Lexend";
+    cursor:pointer;
+    transition:.2s;
+
+}
+
+.save-button:hover{
+    background:#d9c393;
+
+}
+
+@media(max-width:768px){
+    .dashboard{
+        padding:80px 20px 30px;
+    }
+    .dashboard-row{
+        grid-template-columns:1fr;
+    }
+    .journal-section{
+        margin-top:24px;
+    }
+}

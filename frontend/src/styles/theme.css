@@ -1,7 +1,11 @@
-:root{
-    --primary:#565449;
-    --secondary:#D8CFBC;
-    --background:#FFFFFF;
-    --border:#565449;
-    --text:#11120D;
+:root {
+    --background: #D8CFBC;
+    --sidebar: #FFFBF4;
+    --primary: #565449;
+    --primary-light: #A67B5B;
+    --secondary: #D8C3A5;
+    --card: #FFFBF4;
+    --text: #11120D;
+    --muted: #8E8A84;
+    --border: #EFE6D3;
 }

@@ -1,0 +1,39 @@
+.verse-card{
+    background:#565449;
+    border-radius:32px;
+    border:1px solid #EFE7DE;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    padding:36px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:260px;
+}
+
+.bible-verse{
+    font-family:"Lora";
+    font-size:1.2rem;
+    font-style: italic;
+    font-weight:900;
+    color:#FFFFFF;
+    align-self: center;
+}
+.verse-reference{
+    font-family:"Lora";
+    font-style: italic;
+    font-size:1.2rem;
+    font-weight:800;
+    color:#FFFFFF;
+    align-self: center;
+}
+
+.verse-text{
+    margin:24px 0;
+    font-family:"Lora";
+    font-style:italic;
+    color:#FFFFFF;
+    align-self:center;
+    line-height:1.9;
+    font-size:1.05rem;
+    flex:1;
+}

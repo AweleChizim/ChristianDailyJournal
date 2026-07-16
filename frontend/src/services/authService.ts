@@ -1,4 +1,4 @@
-import api from "../lib/axios";
+import api from "../api/axios";
 
 export interface SignupData {
   first_name: string;

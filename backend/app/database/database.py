@@ -5,6 +5,7 @@ from beanie import init_beanie
 from app.core.config import settings
 
 from app.models.user import User
+from app.models.entry import Entry
 
 
 async def init_db():
@@ -20,6 +21,7 @@ async def init_db():
     await init_beanie(
         database=database, 
         document_models=[
-            User
+            User,
+            Entry
         ]
     )

@@ -1,0 +1,131 @@
+.app-layout{
+    display:flex;
+    min-height:100vh;
+    background:#F7F4EF;
+    overflow:hidden;
+}
+
+.main-content{
+    flex:1;
+    overflow-y:auto;
+    overflow-x:hidden;
+    height:100vh;
+}
+
+.sidebar{
+    width:280px;
+    background:#FFFBF4;
+    padding:40px 24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.3s;
+}
+
+.sidebar-logo{
+    font-family:"Lora";
+    color:#11120D;
+    font-size:34px;
+    margin-bottom:60px;
+    line-height:1.2;
+}
+
+.sidebar-link{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 20px;
+    margin-bottom:15px;
+    text-decoration:none;
+    font-family:"Lexend";
+    color:#11120D;
+    border-radius:999px;
+    }
+
+.sidebar-link:hover{
+    background:#EFE6D3
+    }
+
+.sidebar-link.active{
+    background:#5A3E2B;
+    color:white;
+    }
+
+.sidebar-footer{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    }
+
+.logout-btn,
+.delete-btn{
+    height:52px;
+    border:none;
+    border-radius:999px;
+    font-family:"Lexend";
+    cursor:pointer;
+    }
+
+.logout-btn{
+    background:white;
+    }
+
+.delete-btn{
+    background:#8D3C3C;
+    color:white;
+    }
+
+.menu-button{
+    display:none;
+    }
+
+.close-button{
+    display:none;
+    }
+
+.sidebar-overlay{
+    display:none;
+    }
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+    .menu-button{
+    display:flex;
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+    background:white;
+    border:none;
+    padding:10px;
+    border-radius:12px;
+    }
+    .sidebar{
+        position:fixed;
+        left:-320px;
+        top:0;
+        height:100%;
+        z-index:1000;
+        box-shadow:0 0 40px rgba(0,0,0,.15);
+    }
+    .sidebar-open{
+        left:0;
+    }
+    .sidebar-overlay{
+        display:block;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.4);
+        z-index:999;
+    }
+    .close-button{
+        display:block;
+        position:absolute;
+        right:20px;
+        top:20px;
+        border:none;
+        background:none;
+        cursor:pointer;
+    }
+}
