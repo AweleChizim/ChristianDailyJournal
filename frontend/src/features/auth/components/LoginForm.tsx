@@ -13,7 +13,8 @@ import {
   loginSchema,
   type LoginFormData,
 } from "../schemas/login.schema";
-import { login } from "../../../api/authApi";
+import { login, saveToken, saveUser, startSessionTimer } from "../../../api/authApi";
+import { getCurrentUser } from "../../../api/userApi";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -30,33 +31,35 @@ export default function LoginForm(): JSX.Element {
 const navigate = useNavigate();
 
 async function onSubmit(
-  data: LoginFormData
+    data: LoginFormData
 ): Promise<void> {
-  try {
-    const response = await login(data);
 
-    localStorage.setItem(
-      "access_token",
-      response.access_token
-    );
+    try {
+      const response = await login(data);
+      saveToken(response.access_token);
+      startSessionTimer(response.access_token, () => {
+        toast("Your session has expired. Please log in again.");
+        navigate("/login");
+      });
+      const user = await getCurrentUser();
+      saveUser(user);
+      toast.success("Welcome back!");
+      navigate("/dashboard");
 
-    localStorage.setItem(
-      "user",
-      JSON.stringify(response.user)
-    );
+    } catch (error) {
+    
+      if (axios.isAxiosError(error)) {
+        toast.error(
+          error.response?.data.detail ??
+          "Invalid email or password."
+        );
+      } else {
+        toast.error(
+          "Something went wrong."
+        );
+      }
 
-    toast.success("Welcome back!");
-
-    navigate("/dashboard");
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      toast.error(
-        error.response?.data.detail ?? "Invalid email or password."
-      );
-    } else {
-      toast.error("Something went wrong.");
     }
-  }
 }
 
   return (

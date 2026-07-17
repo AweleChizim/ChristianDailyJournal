@@ -61,3 +61,12 @@ class EntryRepository:
     @staticmethod
     async def delete(entry: Entry):
         await entry.delete()
+
+    @staticmethod
+    async def delete_all_by_owner(
+        owner_id: str,
+    ):
+
+        await Entry.find(
+            Entry.owner_id == owner_id,
+        ).delete()

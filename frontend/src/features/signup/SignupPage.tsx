@@ -1,8 +1,8 @@
 import type { JSX } from "react";
 
-import AuthLayout from "../components/layout/AuthLayout";
-import AuthSwitch from "../features/auth/components/AuthSwitch";
-import SignupForm from "../features/auth/components/SignupForm";
+import AuthLayout from "../../components/layout/AuthLayout";
+import AuthSwitch from "../auth/components/AuthSwitch";
+import SignupForm from "../auth/components/SignupForm";
 
 export default function Signup(): JSX.Element {
   return (

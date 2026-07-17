@@ -6,6 +6,7 @@ from app.core.config import settings
 
 from app.models.user import User
 from app.models.entry import Entry
+from app.models.daily_verse import DailyVerse
 
 
 async def init_db():
@@ -22,6 +23,7 @@ async def init_db():
         database=database, 
         document_models=[
             User,
-            Entry
+            Entry,
+            DailyVerse,
         ]
     )

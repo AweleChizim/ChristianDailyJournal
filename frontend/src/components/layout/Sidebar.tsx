@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { removeToken } from "../../api/authApi";
+import { useNavigate } from "react-router-dom";
 import {
     LayoutDashboard,
     Heart,
     NotebookPen,
     Menu,
     X,
-    LogOut,
-    Trash2,
 } from "lucide-react";
 
 import "./Sidebar.css";
+import DeleteAccountModal from "../common/DeleteAccountModal";
+
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +20,14 @@ export default function Sidebar() {
     function closeSidebar() {
         setIsOpen(false);
     }
+
+    const navigate = useNavigate();
+    function handleLogout() {
+        removeToken();
+        navigate("/");
+    }
+
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     return (
         <>
@@ -98,14 +108,27 @@ export default function Sidebar() {
 
                 <div className="sidebar-footer">
 
-                    <button className="logout-btn">
+                    <button 
+                        className="logout-btn"
+                        onClick={handleLogout}
+                    >
                         Logout
                     </button>
 
-                    <button className="delete-btn">
+                    <button 
+                        className="delete-btn"
+                        onClick={() => 
+                            setShowDeleteModal(true)
+                        }
+                    >
                         Delete Account
                     </button>
-
+                    <DeleteAccountModal
+                        open={showDeleteModal}
+                        onClose={() =>
+                            setShowDeleteModal(false)
+                        }
+                    />
                 </div>
 
             </aside>

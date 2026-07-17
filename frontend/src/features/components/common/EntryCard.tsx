@@ -4,19 +4,17 @@ import "./EntryCard.css";
 
 interface EntryCardProps {
     content: string;
-    compact?: boolean;
     onEdit?: () => void;
     onDelete?: () => void;
 }
 
 export default function EntryCard({
     content,
-    compact = false,
     onEdit,
     onDelete,
 }: EntryCardProps) {
     return (
-        <article className={`entry-card ${compact ? "compact" : ""}`}>
+        <article className="entry-card">
             <p>{content}</p>
             <div className="entry-actions">
                 <button onClick={onEdit}>

@@ -26,7 +26,7 @@ class EntryService:
             owner_id=str(current_user.id),
             entry_type=entry_data.entry_type,
             encrypted_content=encrypted,
-            entry_date=entry_data.entry_date,
+            entry_date=date.today(),
         )
 
         saved = await EntryRepository.create(entry)

@@ -31,3 +31,21 @@
     background:#F7F2EC;
     color:#11120D;
 }
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.clear-filter-button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:12px;
+    background:#F5F3EF;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}

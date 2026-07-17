@@ -50,12 +50,11 @@
     font-family:"Lexend";
     cursor:pointer;
     transition:.2s;
-
 }
 
 .save-button:hover{
     background:#d9c393;
-
+    color:#11120D;
 }
 
 @media(max-width:768px){

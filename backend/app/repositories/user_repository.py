@@ -15,3 +15,12 @@ class UserRepository:
     async def create(user: User):
         await user.insert()
         return user
+    
+    @staticmethod
+    async def delete(user: User):
+        await user.delete()
+
+    @staticmethod
+    async def update(user: User):
+        await user.save()
+        return user

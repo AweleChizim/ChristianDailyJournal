@@ -49,11 +49,3 @@
 .entry-actions .delete:hover {
     background-color: #FDECEC;
 }
-
-.entry-card.compact{
-    min-height:140px;
-}
-
-.entry-card:not(.compact){
-    min-height:220px;
-}

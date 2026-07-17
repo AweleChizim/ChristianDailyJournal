@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Depends
 
+from app.api.users import router as users_router
 from app.database.database import init_db
 from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.dependencies.auth import get_current_user
 from app.models.user import User
 from app.api.entries import router as entry_router
+from app.api.verse import router as verse_router
 
 
 @asynccontextmanager
@@ -47,6 +49,8 @@ async def root():
 
 app.include_router(auth_router)
 app.include_router(entry_router)
+app.include_router(verse_router)
+app.include_router(users_router)
 
 @app.get("/me")
 async def me(

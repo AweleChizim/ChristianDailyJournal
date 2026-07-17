@@ -5,7 +5,7 @@
 }
 
 .journal-page .entry-card{
-    min-height:220px;
+    min-height:auto;
 }
 
 @media(max-width:768px){

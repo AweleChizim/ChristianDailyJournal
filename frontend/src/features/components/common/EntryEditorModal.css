@@ -1,0 +1,68 @@
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.editor-modal{
+    width:min(600px,92vw);
+    background:white;
+    border-radius:20px;
+    padding:32px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.editor-modal h2{
+    font-family:"Lora";
+    font-size:1.45rem;
+    color:#11120D;
+}
+
+.editor-modal textarea{
+    min-height:220px;
+    resize:none;
+    border:none;
+    outline:none;
+    background:#F9F8F6;
+    border-radius:16px;
+    padding:18px;
+    font-family:"Lora";
+    font-size:1rem;
+    line-height:1.8;
+}
+
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:16px;
+}
+
+.secondary-button{
+    background: #FFFFFF;
+    cursor:pointer;
+    font-family:"Lexend";
+    align-self:flex-end;
+    margin-top:24px;
+    width:150px;
+    height:50px;
+    border:none;
+    border-radius:999px;
+    color:#11120D;
+    font-family:"Lexend";
+    cursor:pointer;
+    transition:.2s;
+}
+
+.secondary-button:hover{
+    background:#d9c393;
+}
+
+.save-button{
+    cursor:pointer;
+}

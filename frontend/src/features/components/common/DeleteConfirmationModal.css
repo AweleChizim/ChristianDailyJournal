@@ -1,0 +1,74 @@
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.delete-modal{
+    width:min(430px,92vw);
+    background:#FFFFFF;
+    border-radius:20px;
+    padding:32px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.delete-modal h2{
+    font-family:"Lora";
+    font-size:1.4rem;
+}
+
+.delete-modal p{
+    font-family:"Lora";
+    line-height:1.8;
+    color:#666;
+}
+
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:16px;
+}
+
+.secondary-button{
+    background: #FFFFFF;
+    cursor:pointer;
+    font-family:"Lexend";
+    align-self:flex-end;
+    margin-top:24px;
+    width:150px;
+    height:50px;
+    border:none;
+    border-radius:999px;
+    color:#11120D;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.secondary-button:hover{
+    background:#d9c393;
+}
+
+.delete-button{
+    background: #A53F3F;
+    cursor:pointer;
+    font-family:"Lexend";
+    align-self:flex-end;
+    margin-top:24px;
+    width:150px;
+    height:50px;
+    border:none;
+    border-radius:999px;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.delete-button:hover{
+    background:#d46a6a;
+}
