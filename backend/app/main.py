@@ -36,7 +36,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://christiandailyjournal-ac.vercel.app"
+        "https://christiandailyjournal-ac.vercel.app/"
     ],
     allow_credentials=True,
     allow_methods=["*"],
