@@ -1,4 +1,3 @@
-import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const hour = new Date().getHours();
@@ -25,8 +24,6 @@ export default function Header() {
           I will praise God's name in song...
         </p>
       </div>
-
-      <ThemeToggle />
     </header>
   );
 }
