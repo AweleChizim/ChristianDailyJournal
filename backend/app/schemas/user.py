@@ -8,7 +8,6 @@ class UserCreate(BaseModel):
     last_name: str
     email: EmailStr
     password: str
-    provider: Literal["local", "google"]
 
 
 class UserLogin(BaseModel):
