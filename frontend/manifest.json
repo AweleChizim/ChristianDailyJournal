@@ -1,6 +1,6 @@
 {
-  "short_name": "MDN",
-  "name": "MDN Web Docs",
+  "short_name": "CDJ",
+  "name": "Christian Daily Journal",
   "icons": [
     {
       "src": "/icon-192.png",
@@ -18,8 +18,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://christiandailyjournal.vercel.app/",
   "display": "standalone",
-  "theme_color": "black",
-  "background_color": "white"
+  "theme_color": "#565449",
+  "background_color": "#d8cfbc"
 }
