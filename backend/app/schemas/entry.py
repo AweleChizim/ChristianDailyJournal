@@ -11,10 +11,7 @@ class EntryCreate(BaseModel):
         min_length=1,
         max_length=10000,
     )
-    entry_date: date | None = Field(
-        default=None,
-        description="The date of the entry. If not provided, defaults to today.",
-    )
+    entry_date: date | None = None
 
 class EntryUpdate(BaseModel):
     content: str = Field(
