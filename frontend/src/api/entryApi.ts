@@ -17,6 +17,7 @@ export interface Entry {
 export interface CreateEntryRequest {
     entry_type: "gratitude" | "journal";
     content: string;
+    entry_date?: string;
 }
 
 export interface UpdateEntryRequest {

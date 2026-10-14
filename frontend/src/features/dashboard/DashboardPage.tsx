@@ -32,6 +32,7 @@ export default function DashboardPage() {
             await createEntry({
                 entry_type: "gratitude",
                 content: gratitude,
+                entry_date: selectedDate,
             });
             toast.success("Gratitude saved.");
             setGratitude("");
@@ -51,6 +52,7 @@ export default function DashboardPage() {
             await createEntry({
                 entry_type: "journal",
                 content: journal,
+                entry_date: selectedDate,
             });
             toast.success("Journal entry saved.");
             setJournal("");
