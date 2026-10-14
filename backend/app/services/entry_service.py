@@ -18,6 +18,14 @@ class EntryService:
         current_user: User,
     ) -> EntryResponse:
 
+        entry_date = entry_data.entry_date or date.today()
+
+        if entry_date > date.today():
+            raise HTTPException(
+                status_code=400,
+                detail="Entry date cannot be in the future.",
+            )
+        
         encrypted = EncryptionService.encrypt(
             entry_data.content
         )
@@ -26,7 +34,7 @@ class EntryService:
             owner_id=str(current_user.id),
             entry_type=entry_data.entry_type,
             encrypted_content=encrypted,
-            entry_date=date.today(),
+            entry_date=entry_date,
         )
 
         saved = await EntryRepository.create(entry)

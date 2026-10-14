@@ -1,5 +1,4 @@
 from datetime import date, datetime
-
 from pydantic import BaseModel, Field
 
 from app.enums.entry_type import EntryType
@@ -11,6 +10,10 @@ class EntryCreate(BaseModel):
     content: str = Field(
         min_length=1,
         max_length=10000,
+    )
+    entry_date: date | None = Field(
+        default=None,
+        description="The date of the entry. If not provided, defaults to today.",
     )
 
 class EntryUpdate(BaseModel):
