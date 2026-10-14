@@ -49,3 +49,12 @@
     align-items:center;
     cursor:pointer;
 }
+
+.header-date-label {
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #565449;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}

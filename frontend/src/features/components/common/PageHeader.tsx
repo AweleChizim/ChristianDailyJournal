@@ -3,7 +3,8 @@ import { CalendarDays, X } from "lucide-react";
 import "./PageHeader.css";
 
 interface PageHeaderProps {
-    title: string;
+    title?: string;
+    dateLabel?: string;
     isFiltering?: boolean;
     onCalendarClick?: () => void;
     onClearFilter?: () => void;
@@ -11,6 +12,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({
     title,
+    dateLabel,
     isFiltering = false,
     onCalendarClick,
     onClearFilter,
@@ -29,15 +31,23 @@ export default function PageHeader({
                     <button
                         className="clear-filter-button"
                         onClick={onClearFilter}
+                        aria-label="Clear date filter"
                     >
                         <X size={18} />
                     </button>
 
                 )}
 
+                {dateLabel && (
+                    <span className="header-date-label">
+                        {dateLabel}
+                    </span>
+                )}
+
                 <button
                     className="calendar-button"
                     onClick={onCalendarClick}
+                    aria-label="Choose date"
                 >
                     <CalendarDays size={30} />
                 </button>

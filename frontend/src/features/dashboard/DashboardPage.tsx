@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import toast from "react-hot-toast";
+import PageHeader from "../components/common/PageHeader";
 import Greeting from "./components/Greeting";
 import VerseCard from "./components/VerseCard";
 import DashboardCard from "./components/DashboardCard";
@@ -15,7 +16,12 @@ export default function DashboardPage() {
     const [savingGratitude, setSavingGratitude] = useState(false);
     const [savingJournal, setSavingJournal] = useState(false);
     const user = getUser();
-    
+    const dateInputRef = useRef<HTMLInputElement>(null);
+    const [selectedDate, setSelectedDate] = useState(
+        getLocalDateString
+    );
+    const today = getLocalDateString();
+
     async function handleSaveGratitude() {
         if (!gratitude.trim()) {
             toast.error("Please write something first.");
@@ -55,9 +61,53 @@ export default function DashboardPage() {
             setSavingJournal(false);
         }
     }
+    function getLocalDateString() {
+        const now = new Date();
+
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+    }
+    function formatSelectedDate(date: string) {
+        if (!date) return "";
+
+        const [year, month, day] = date.split("-");
+
+        return `${day}-${month}-${year}`;
+    }
+    function openDatePicker() {
+        const input = dateInputRef.current;
+
+        if (!input) return;
+
+        try {
+            if (typeof input.showPicker === "function") {
+                input.showPicker();
+            } else {
+                input.click();
+            }
+        } catch {
+            input.click();
+        }
+    }
 
     return (
     <div className="dashboard">
+        <input
+            ref={dateInputRef}
+            type="date"
+            value={selectedDate}
+            max={today}
+            onChange={(event) => setSelectedDate(event.target.value)}
+            style={{ display: "none" }}
+        />
+
+        <PageHeader
+            dateLabel={formatSelectedDate(selectedDate)}
+            onCalendarClick={openDatePicker}
+        />
 
           <Greeting firstName={user?.first_name ?? ""} />
 
