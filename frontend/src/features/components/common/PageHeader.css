@@ -50,6 +50,10 @@
     cursor:pointer;
 }
 
+.page-header--actions-only {
+    justify-content: flex-end;
+}
+
 .header-date-label {
     font-family: "Lora", serif;
     font-size: 1rem;
@@ -57,4 +61,41 @@
     color: #565449;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
+}
+
+
+.calendar-control {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+}
+
+.calendar-visual {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.calendar-native-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.calendar-control:focus-within .calendar-visual {
+    outline: 2px solid #565449;
+    outline-offset: 3px;
 }

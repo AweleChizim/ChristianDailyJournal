@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 import { deleteEntry, getEntries, type Entry } from "../../api/entryApi";
@@ -19,10 +19,9 @@ export default function GratitudePage() {
     const [loading, setLoading] = useState(true);
     const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
     const [deleting, setDeleting] = useState(false);
-    const { editingEntry, setEditingEntry, saving, save } = useEntryEditor(setEntries);
-    const dateInputRef = useRef<HTMLInputElement>(null);
+    const {editingEntry, setEditingEntry, saving, save } = useEntryEditor(setEntries);
     const [selectedDate, setSelectedDate] = useState("");
-
+    const today = getLocalDateString();
 
     useEffect(() => {
 
@@ -70,7 +69,17 @@ export default function GratitudePage() {
             setDeleting(false);
         }
     }
-    
+   
+     function getLocalDateString() {
+        const now = new Date();
+
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+    }
+   
     const groupedEntries = entries.reduce(
         (groups: Record<string, Entry[]>, entry) => {
 
@@ -97,17 +106,12 @@ export default function GratitudePage() {
     return (
 
         <div className="gratitude-page">
-            <input
-                ref={dateInputRef}
-                type="date"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-                style={{ display: "none" }}
-            />
             <PageHeader
                 title="Gratitude Journal"
                 isFiltering={!!selectedDate}
-                onCalendarClick={() => dateInputRef.current?.showPicker()}
+                dateValue={selectedDate}
+                maxDate={today}
+                onDateChange={setSelectedDate}
                 onClearFilter={() => setSelectedDate("")}
             />
 

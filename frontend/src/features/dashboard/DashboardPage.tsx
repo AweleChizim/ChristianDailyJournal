@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import PageHeader from "../components/common/PageHeader";
 import Greeting from "./components/Greeting";
@@ -16,7 +16,6 @@ export default function DashboardPage() {
     const [savingGratitude, setSavingGratitude] = useState(false);
     const [savingJournal, setSavingJournal] = useState(false);
     const user = getUser();
-    const dateInputRef = useRef<HTMLInputElement>(null);
     const [selectedDate, setSelectedDate] = useState(
         getLocalDateString
     );
@@ -77,26 +76,10 @@ export default function DashboardPage() {
 
         return `${day}-${month}-${year}`;
     }
-    function openDatePicker() {
-        const input = dateInputRef.current;
-
-        if (!input) return;
-
-        try {
-            if (typeof input.showPicker === "function") {
-                input.showPicker();
-            } else {
-                input.click();
-            }
-        } catch {
-            input.click();
-        }
-    }
-
+    
     return (
     <div className="dashboard">
         <input
-            ref={dateInputRef}
             type="date"
             value={selectedDate}
             max={today}
@@ -106,8 +89,10 @@ export default function DashboardPage() {
 
         <PageHeader
             dateLabel={formatSelectedDate(selectedDate)}
-            onCalendarClick={openDatePicker}
-        />
+            dateValue={selectedDate}
+            maxDate={today}
+            onDateChange={setSelectedDate}
+         />
 
           <Greeting firstName={user?.first_name ?? ""} />
 
