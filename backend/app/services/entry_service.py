@@ -20,12 +20,6 @@ class EntryService:
 
         entry_date = entry_data.entry_date or date.today()
 
-        if entry_date > date.today():
-            raise HTTPException(
-                status_code=400,
-                detail="Entry date cannot be in the future.",
-            )
-        
         encrypted = EncryptionService.encrypt(
             entry_data.content
         )
