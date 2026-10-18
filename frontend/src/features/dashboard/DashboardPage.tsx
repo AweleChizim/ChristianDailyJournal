@@ -84,7 +84,6 @@ export default function DashboardPage() {
         <input
             type="date"
             value={selectedDate}
-            max={today}
             onChange={(event) => setSelectedDate(event.target.value)}
             style={{ display: "none" }}
         />
@@ -92,7 +91,6 @@ export default function DashboardPage() {
         <PageHeader
             dateLabel={formatSelectedDate(selectedDate)}
             dateValue={selectedDate}
-            maxDate={today}
             onDateChange={setSelectedDate}
          />
 
